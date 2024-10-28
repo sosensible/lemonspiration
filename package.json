@@ -12,9 +12,11 @@
   "dependencies": {
     "@nuxt/kit": "^3.13.2",
     "daisyui": "^4.12.13",
+    "fs": "0.0.1-security",
     "nuxt": "^3.13.2",
     "vue": "latest",
-    "vue-router": "latest"
+    "vue-router": "latest",
+    "ynab": "^2.6.0"
   },
   "packageManager": "pnpm@9.12.2",
   "devDependencies": {

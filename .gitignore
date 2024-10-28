@@ -25,3 +25,5 @@ logs
 
 # SOSApps
 layers/**
+server.cert
+server.key
