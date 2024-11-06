@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import fs from 'fs';
+import path from 'path';
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
@@ -31,9 +32,23 @@ export default defineNuxtConfig({
     
     devServer: {
       https: {
-        key: fs.readFileSync('server.key'),
-        cert: fs.readFileSync('server.cert')
+        key: fs.readFileSync(path.resolve(__dirname, 'localhost-key.pem')),
+        cert: fs.readFileSync(path.resolve(__dirname, 'localhost.pem'))
       }
     },
+    port: 3000
+  },
+
+  // Add security headers
+  nitro: {
+    routeRules: {
+      '/**': {
+        headers: {
+          'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
+          'X-Frame-Options': 'SAMEORIGIN',
+          'X-Content-Type-Options': 'nosniff'
+        }
+      }
+    }
   },
 })

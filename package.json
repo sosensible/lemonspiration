@@ -14,6 +14,7 @@
     "@tailwindcss/typography": "^0.5.15",
     "daisyui": "^4.12.13",
     "fs": "0.0.1-security",
+    "ical.js": "^2.1.0",
     "nuxt": "^3.13.2",
     "vue": "latest",
     "vue-router": "latest",
